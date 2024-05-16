@@ -38,16 +38,12 @@ function App() {
   }
 
   return (
-    // null
     <>
     <PokemonList pokemon={pokemon} />
     <Pagination
-    gotoNextPage={gotoNextPage}
-    gotoPreviousPage={gotoPreviousPage}
+    gotoNextPage={nextPageUrl ? gotoNextPage: null}
+    gotoPreviousPage={previousPageUrl ? gotoPreviousPage: null}
     />
-    {/* // <div>
-    //   Hello World
-    // </div> */}
     </>
   );
 }

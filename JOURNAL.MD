@@ -10,3 +10,12 @@ Library:
 `Axios; allows us to more easily fetch data from an api`
 
 * Use an empty html tag (react fragment) to house multiple components
+* Add this to your settings with `ctrl+,`, in your settings.JSON
+```
+ "emmet.includeLanguages": {
+     "javascript": "javascriptreact"
+ },
+ "emmet.syntaxProfiles": {
+     "javascript": "jsx"
+ }
+```
