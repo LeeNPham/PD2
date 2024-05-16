@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PokemonList from "./components/PokemonList";
-import Pagination from "./components/Pagination";
+import PokemonList from "./original-components/PokemonList";
+import Pagination from "./original-components/Pagination";
 import axios from "axios";
 
 function App() {
