@@ -7,18 +7,26 @@ import axios from "axios"
 function App() {
   const [pokemon, setPokemon] = useState([])
   const [currentPageUrl, setCurrentPageUrl] = useState('https://pokeapi.co/api/v2/pokemon')
+  const [nextPageUrl, setNextPageUrl] = useState()
+  const [previousPageUrl, setPreviousPageUrl] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-  //This is an effect, it's something we want to happen and to rerender it
-  axios.get(currentPageUrl).then(res => {
-    setPokemon(res.data.results.map(p=> p.name))
-  })
-  },[currentPageUrl])
+    setLoading(true)
+    let cancel
+    axios.get(currentPageUrl, { cancelToken: new axios.CancelToken(c => cancel=c) }).then(res => {
+    setLoading(false)
+    setNextPageUrl(res.data.next)
+    setPreviousPageUrl(res.data.previous)
+    setPokemon(res.data.results.map(p => p.name))
+    })
 
+    return () => cancel()
+  }, [currentPageUrl])
 
-
-
-
+  if (loading) {
+    return ("Loading...")
+  }
 
   return (
     // null
