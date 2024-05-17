@@ -41,6 +41,7 @@ const Main=()=>{
         <>
             <div className="container">
                 <div className="left-content">
+
                     <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokeDex(poke)}/>
 
                     <div className="btn-group">
@@ -53,6 +54,8 @@ const Main=()=>{
                             setPokeData([])
                             setUrl(nextUrl)
                         }}>Next</button>}
+
+
                     </div>
                 </div>
 
