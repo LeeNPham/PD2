@@ -6,7 +6,8 @@ const PokeInfo = ({ data }) => {
         <>
         {
             (!data) ? "" : (
-                <>
+                    <>
+                        <di className='flex flex-col items-center justify-center'>
                     <h1>{data.name}</h1>
                     <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
                     <div className="abilities">
@@ -32,7 +33,8 @@ const PokeInfo = ({ data }) => {
                                 )
                             })
                         }
-                    </div>
+                            </div>
+                            </di>
                 </>
             )
         }
