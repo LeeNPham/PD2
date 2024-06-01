@@ -2,8 +2,8 @@ import React from "react";
 import Card from "./Card";
 import PokeInfo from "./PokeInfo";
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 
 const Main=()=>{
     const [pokeData,setPokeData]=useState([]);
